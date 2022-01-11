@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import validator from 'validator'
 import "./contact.scss"
+import emailjs from '@emailjs/browser';
 
 export default function Contact() {
+    const formRef = useRef();
 
     const [emailError, setEmailError] = useState('')
     const validateEmail = (e) => {
@@ -15,25 +17,25 @@ export default function Contact() {
         }
     }
 
-    const [status, setStatus] = useState("Submit");
-    const handleSubmit = async (e) => {
+    const [done, setDone] = useState(false);
+    const handleSubmit = (e) => {
         e.preventDefault();
-        setStatus("Sending...");
-        const { email, message } = e.target.elements;
-        let details = {
-            email: email.value,
-            message: message.value,
-        };
-        let response = await fetch("https://dipan-portfolio.herokuapp.com/contact", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json;charset=utf-8",
-            },
-            body: JSON.stringify(details),
-        });
-        setStatus("Submit");
-        let result = await response.json();
-        setStatus(result.status);
+        emailjs
+            .sendForm(
+                "service_ef2nk5k",
+                "template_rchms2o",
+                formRef.current,
+                "user_V88xEHCgH913EFMNqxCRw"
+            )
+            .then(
+                (result) => {
+                    console.log(result.text);
+                    setDone(true)
+                },
+                (error) => {
+                    console.log(error.text);
+                }
+            );
     };
 
     return (
@@ -43,16 +45,17 @@ export default function Contact() {
             </div>
             <div className="right">
                 <h2>Contact.</h2>
-                <form onSubmit={handleSubmit}>
-                    <input type="text" placeholder="Email" id="email" required onChange={(e) => validateEmail(e)} />
-                    <textarea id="message" placeholder="Message" required></textarea>
+                <form ref={formRef} onSubmit={handleSubmit}>
+                    <input type="text" name="user_email" placeholder="Email" id="email" required onChange={(e) => validateEmail(e)} />
+                    <textarea id="message" placeholder="Message" name="message" required></textarea>
                     <h3 style={{
                         fontWeight: 'bold',
                         color: 'red',
                     }}>{emailError}</h3>
                     {emailError === 'Enter valid Email!' ? null
-                        : <button type="submit">{status}</button>}
+                        : <button type="submit">{done ? "Sent" : "Submit"}</button>}
                 </form>
             </div>
         </div>
-    )}
+    )
+}
