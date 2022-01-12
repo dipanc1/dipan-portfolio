@@ -33,7 +33,7 @@ export default function Topbar({ menuOpen, setMenuOpen }) {
                         <Work className="icon1" />
                         <span><a href="https://www.freelancer.com/u/dipanc1" target="_blank" rel="noreferrer noopener">Hire Me</a></span>
                     </div>
-                    <div className="itemContainer">
+                    <div className="itemContainerToggle">
                         <Toggle />
                     </div>
                 </div>

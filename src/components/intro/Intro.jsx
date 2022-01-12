@@ -12,7 +12,7 @@ export default function Intro() {
             showCursor: true,
             backDelay: 1500,
             backSpeed: 25,
-            strings: ['Reactjs', 'Angular', 'ASP.NET', 'Basically Web Development']
+            strings: ['UI/UX', 'Reactjs', 'Nodejs', 'ASP.NET', 'MongoDB', 'MS SQL', 'Web APIs', 'Basically Web Development']
         })
 
     }, []);
@@ -23,15 +23,15 @@ export default function Intro() {
     return (
         <div className="intro" id="intro" style={{ backgroundColor: darkMode ? '#15023a' : 'white', color: darkMode && 'white' }}>
             <div className="left">
-                <div className="imgContainer" style={{backgroundColor: darkMode && '#59b256'}}>
+                <div className="imgContainer" style={{ backgroundColor: darkMode && '#59b256' }}>
                     <img src="assets/man.png" alt="" />
                 </div>
             </div>
             <div className="right">
                 <div className="wrapper">
-                    <h2>Hello, I'm</h2>
+                    <h2>Howdy Dowdy, I'm</h2>
                     <h1>Dipan Chhabra</h1>
-                    <h3>Noob in <span style={{color: darkMode && '#59b256'}} ref={textRef}></span></h3>
+                    <h3>Expert in <span style={{ color: darkMode && '#59b256' }} ref={textRef}></span></h3>
                     <a href="#portfolio">
                         <img src="assets/down.png" alt="" />
                     </a>
