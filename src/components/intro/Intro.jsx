@@ -1,6 +1,7 @@
 import './intro.scss';
 import { init } from 'ityped';
-import { useEffect, useRef } from "react";
+import { useContext, useEffect, useRef } from "react";
+import { ThemeContext } from '../../context';
 
 export default function Intro() {
     const textRef = useRef();
@@ -16,10 +17,13 @@ export default function Intro() {
 
     }, []);
 
+    const theme = useContext(ThemeContext);
+    const darkMode = theme.state.darkMode;
+
     return (
-        <div className="intro" id="intro">
+        <div className="intro" id="intro" style={{ backgroundColor: darkMode ? '#15023a' : 'white', color: darkMode && 'white' }}>
             <div className="left">
-                <div className="imgContainer">
+                <div className="imgContainer" style={{backgroundColor: darkMode && '#59b256'}}>
                     <img src="assets/man.png" alt="" />
                 </div>
             </div>
@@ -27,7 +31,7 @@ export default function Intro() {
                 <div className="wrapper">
                     <h2>Hello, I'm</h2>
                     <h1>Dipan Chhabra</h1>
-                    <h3>Noob in <span ref={textRef}></span></h3>
+                    <h3>Noob in <span style={{color: darkMode && '#59b256'}} ref={textRef}></span></h3>
                     <a href="#portfolio">
                         <img src="assets/down.png" alt="" />
                     </a>

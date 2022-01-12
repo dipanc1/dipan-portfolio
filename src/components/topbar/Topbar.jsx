@@ -1,10 +1,15 @@
 import './topbar.scss'
 import { Person, Mail, LinkedIn, GitHub } from "@material-ui/icons"
 import Toggle from '../toggle/Toggle'
+import { useContext } from 'react';
+import { ThemeContext } from '../../context';
 
 export default function Topbar({ menuOpen, setMenuOpen }) {
+    const theme = useContext(ThemeContext);
+    const darkMode = theme.state.darkMode;
+
     return (
-        <div className={"topbar " + (menuOpen && "active")}>
+        <div className={"topbar " + (menuOpen && "active")} style={{ backgroundColor: darkMode ?'#15023a' : 'white', color: darkMode && 'white' }}>
             <div className="wrapper">
                 <div className="left">
                     <a href="#intro" className="logo">Dipan's Portfolio.</a>
@@ -30,9 +35,9 @@ export default function Topbar({ menuOpen, setMenuOpen }) {
                 </div>
                 <div className="right">
                     <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
-                        <span className="line1"></span>
-                        <span className="line2"></span>
-                        <span className="line3"></span>
+                        <span style={{ backgroundColor: darkMode ? 'white' : "#15023a" }}  className="line1"></span>
+                        <span style={{ backgroundColor: darkMode ? 'white' : "#15023a" }}  className="line2"></span>
+                        <span style={{ backgroundColor: darkMode ? 'white' : "#15023a" }}  className="line3"></span>
                     </div>
                 </div>
             </div>

@@ -1,7 +1,8 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useContext } from "react";
 import validator from 'validator'
 import "./contact.scss"
 import emailjs from '@emailjs/browser';
+import { ThemeContext } from "../../context";
 
 export default function Contact() {
     const formRef = useRef();
@@ -38,13 +39,16 @@ export default function Contact() {
             );
     };
 
+    const theme = useContext(ThemeContext);
+    const darkMode = theme.state.darkMode;
+
     return (
-        <div className="contact" id="contact">
+        <div className="contact" id="contact" style={{ backgroundColor: darkMode ? '#15023a' : 'white', color: darkMode && 'white' }}>
             <div className="left">
-                <img src="assets/shake.svg" alt="" />
+                <img src="assets/shake.svg" alt="" style={{ filter: darkMode && 'invert(100%)' }} />
             </div>
             <div className="right">
-                <h2>Contact.</h2>
+                <h2 style={{ color: darkMode ? 'white' : "#15023a" }}>Contact.</h2>
                 <form ref={formRef} onSubmit={handleSubmit}>
                     <input type="text" name="user_email" placeholder="Email" id="email" required onChange={(e) => validateEmail(e)} />
                     <textarea id="message" placeholder="Message" name="message" required></textarea>
@@ -53,7 +57,7 @@ export default function Contact() {
                         color: 'red',
                     }}>{emailError}</h3>
                     {emailError === 'Enter valid Email!' ? null
-                        : <button type="submit">{done ? "Sent" : "Submit"}</button>}
+                        : <button style={{backgroundColor: darkMode && '#59b256'}} type="submit">{done ? "Sent" : "Submit"}</button>}
                 </form>
             </div>
         </div>

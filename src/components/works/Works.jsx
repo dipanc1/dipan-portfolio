@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
+import { ThemeContext } from '../../context';
 import './works.scss'
 
 export default function Works() {
@@ -34,8 +35,11 @@ export default function Works() {
             : setCurrentSlide(currentSlide < data.length - 1 ? currentSlide + 1 : 0)
     };
 
+    const theme = useContext(ThemeContext);
+    const darkMode = theme.state.darkMode;
+
     return (
-        <div className="works" id="works">
+        <div className="works" id="works" style={{ backgroundColor: darkMode ? '#15023a' : 'crimson' , color: darkMode && 'inherit' }}>
             <div className="slider" style={{ transform: `translateX(-${currentSlide * 100}vw)` }}>
                 {data.map(d => (
                     <div key={d.id} className="container">

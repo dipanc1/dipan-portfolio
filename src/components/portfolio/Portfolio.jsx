@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import PortfolioList from '../portfolioList/PortfolioList.jsx';
 import './portfolio.scss'
 import {
@@ -7,6 +7,7 @@ import {
     mobilePortfolio,
     designPortfolio,
 } from "../../data";
+import { ThemeContext } from '../../context.js';
 
 export default function Portfolio() {
 
@@ -51,9 +52,11 @@ export default function Portfolio() {
         }
     }, [selected])
 
+    const theme = useContext(ThemeContext);
+    const darkMode = theme.state.darkMode;
 
     return (
-        <div className="portfolio" id="portfolio">
+        <div className="portfolio" id="portfolio"  style={{ backgroundColor: darkMode ? '#15023a' : 'white', color: darkMode && 'white' }}>
             <h1>Portfolio</h1>
             <ul>
                 {list.map(item => (
