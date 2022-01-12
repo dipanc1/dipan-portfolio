@@ -1,5 +1,5 @@
 import './topbar.scss'
-import { Person, Mail, LinkedIn, GitHub } from "@material-ui/icons"
+import { Person, Mail, LinkedIn, GitHub, Work } from "@material-ui/icons"
 import Toggle from '../toggle/Toggle'
 import { useContext } from 'react';
 import { ThemeContext } from '../../context';
@@ -28,6 +28,10 @@ export default function Topbar({ menuOpen, setMenuOpen }) {
                     <div className="itemContainer">
                         <GitHub className="icon" />
                         <span><a href="https://github.com/dipanc1/" target="_blank" rel="noreferrer noopener">dipanc1</a></span>
+                    </div>
+                    <div className="itemContainer1">
+                        <Work className="icon1" />
+                        <span><a href="https://www.freelancer.com/u/dipanc1" target="_blank" rel="noreferrer noopener">Hire Me</a></span>
                     </div>
                     <div className="itemContainer">
                         <Toggle />
