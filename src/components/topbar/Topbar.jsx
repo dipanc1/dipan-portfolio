@@ -9,7 +9,7 @@ export default function Topbar({ menuOpen, setMenuOpen }) {
     const darkMode = theme.state.darkMode;
 
     return (
-        <div className={"topbar " + (menuOpen && "active")} style={{ backgroundColor: darkMode ?'#15023a' : 'white', color: darkMode && 'white' }}>
+        <div className={"topbar " + (menuOpen && "active")} style={{ backgroundColor: menuOpen || darkMode ? '#15023a' : 'white', color: (menuOpen || darkMode) && 'white' }}>
             <div className="wrapper">
                 <div className="left">
                     <a href="#intro" className="logo">Dipan's Portfolio.</a>
@@ -35,9 +35,9 @@ export default function Topbar({ menuOpen, setMenuOpen }) {
                 </div>
                 <div className="right">
                     <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
-                        <span style={{ backgroundColor: darkMode ? 'white' : "#15023a" }}  className="line1"></span>
-                        <span style={{ backgroundColor: darkMode ? 'white' : "#15023a" }}  className="line2"></span>
-                        <span style={{ backgroundColor: darkMode ? 'white' : "#15023a" }}  className="line3"></span>
+                        <span style={{ backgroundColor: menuOpen || darkMode ? 'white' : "#15023a" }} className="line1"></span>
+                        <span style={{ backgroundColor: menuOpen || darkMode ? 'white' : "#15023a" }} className="line2"></span>
+                        <span style={{ backgroundColor: menuOpen || darkMode ? 'white' : "#15023a" }} className="line3"></span>
                     </div>
                 </div>
             </div>
