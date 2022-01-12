@@ -42,56 +42,36 @@ export const featuredPortfolio = [{
 
 export const webPortfolio = [{
         id: 1,
-        title: "PHP Chat App",
-        img: "https://res.cloudinary.com/dipanc1/image/upload/v1641960085/portfolio/Screenshot_107_qejpsp.png",
-    },
-    {
-        id: 2,
         title: "PHP Forum Website",
         img: "https://res.cloudinary.com/dipanc1/image/upload/v1641960140/portfolio/Screenshot_108_zx2oen.png",
     },
     {
-        id: 3,
+        id: 2,
         title: "Nodejs Chat App",
         img: "https://res.cloudinary.com/dipanc1/image/upload/v1641960099/portfolio/Screenshot_107_bbkide.png",
     },
     {
-        id: 4,
+        id: 3,
         title: "JavaScript Snake Game",
         img: "https://res.cloudinary.com/dipanc1/image/upload/v1641960169/portfolio/Screenshot_109_yu7u6n.png",
     },
     {
-        id: 5,
+        id: 4,
         title: "Corona Map with Static API and Map Box",
         img: "https://res.cloudinary.com/dipanc1/image/upload/v1641960039/portfolio/img6_qsbiq4.png",
     },
     {
-        id: 6,
-        title: "CRUD Library App with JavaScript",
-        img: "https://res.cloudinary.com/dipanc1/image/upload/v1641960049/portfolio/img7_sikeiq.png",
-    },
-    {
-        id: 7,
-        title: "Calculater In JavaScript",
-        img: "https://res.cloudinary.com/dipanc1/image/upload/v1641960072/portfolio/img9_z1ozed.png",
-    },
-    {
-        id: 8,
-        title: "Submit Forum in NodeJS and PUG",
-        img: "data:image/png;base64,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",
-    },
-    {
-        id: 9,
+        id: 5,
         title: "Fetching News From News API",
         img: "https://res.cloudinary.com/dipanc1/image/upload/v1641960022/portfolio/img4_pnlsbw.png",
     },
     {
-        id: 10,
-        title: "CRUD App with C#",
+        id: 6,
+        title: "CRUD App with ASP.NET",
         img: "https://res.cloudinary.com/dipanc1/image/upload/v1641960049/portfolio/img7_sikeiq.png",
     },
     {
-        id: 11,
+        id: 7,
         title: "Angular CRUD App With Login",
         img: "https://res.cloudinary.com/dipanc1/image/upload/v1641959999/portfolio/img11_yp4y92.png",
     },
