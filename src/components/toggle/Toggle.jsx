@@ -13,7 +13,7 @@ const Toggle = () => {
         <div className='t'>
             <img src="assets/sun.png" alt="" className="t-icon" />
             <img src="assets/moon.png" alt="" className="t-icon" />
-            <div className="t-button" onClick={handleClick} style={{ left: theme.state.darkMode ? 0 : '25px' }}></div>
+            <div className="t-button" onClick={handleClick} style={{ left: theme.state.darkMode ? 0 : '25px', transition: 'all 1s ease' }}></div>
         </div>
     )
 }
