@@ -57,12 +57,12 @@ export default function Portfolio() {
             <h1>Portfolio</h1>
             <ul>
                 {list.map(item => (
-                    <PortfolioList title={item.title} active={selected === item.id} setSelected={setSelected} id={item.id} />
+                    <PortfolioList key={item.id} title={item.title} active={selected === item.id} setSelected={setSelected} id={item.id} />
                 ))}
             </ul>
             <div className="container">
                 {data.map(d => (
-                    <div className="item">
+                    <div key={d.id} className="item">
                         <img src={d.img} alt="app" />
                         <h3>{d.title}</h3>
                     </div>
