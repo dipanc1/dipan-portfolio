@@ -39,7 +39,7 @@ export default function Works() {
     const darkMode = theme.state.darkMode;
 
     return (
-        <div className="works" id="works" style={{ backgroundColor: darkMode ? '#15023a' : 'crimson' , color: darkMode && 'inherit' }}>
+        <div className="works" id="works" style={{ backgroundColor: darkMode ? '#59b256' : 'crimson' , color: darkMode && 'inherit' }}>
             <div className="slider" style={{ transform: `translateX(-${currentSlide * 100}vw)` }}>
                 {data.map(d => (
                     <div key={d.id} className="container">
