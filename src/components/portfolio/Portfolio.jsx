@@ -56,7 +56,7 @@ export default function Portfolio() {
     const darkMode = theme.state.darkMode;
 
     return (
-        <div className="portfolio" id="portfolio"  style={{ backgroundColor: darkMode ? '#15023a' : 'white', color: darkMode && 'white' }}>
+        <div className="portfolio" id="portfolio" style={{ backgroundColor: darkMode ? '#15023a' : 'white', color: darkMode && 'white' }}>
             <h1>Portfolio</h1>
             <ul>
                 {list.map(item => (
@@ -65,10 +65,12 @@ export default function Portfolio() {
             </ul>
             <div className="container">
                 {data.map(d => (
-                    <div key={d.id} className="item">
-                        <img src={d.img} alt="app" />
-                        <h3>{d.title}</h3>
-                    </div>
+                    <a href={d.url} target={"_blank"} rel={"noreferrer"}>
+                        <div key={d.id} className="item">
+                            <img src={d.img} alt="app" />
+                            <h3>{d.title}</h3>
+                        </div>
+                    </a>
                 ))}
             </div>
         </div>

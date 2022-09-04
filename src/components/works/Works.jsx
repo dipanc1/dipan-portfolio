@@ -7,26 +7,26 @@ export default function Works() {
     const data = [
         {
             id: 1,
-            title: "Fetching News from NewsAPI",
-            desc: "Fetching Data Using News API, and showing it Dynamically on Bootstrap Web Application, Parsing JSON Data In HTML",
+            title: "Nextjs Shopping App",
+            desc: "Login to the app as Admin and add new products to the store. You can also edit and delete products. As a user you can add products to the cart and checkout.",
             img:
-                "https://res.cloudinary.com/dipanc1/image/upload/v1641960022/portfolio/img4_pnlsbw.png",
+                "https://res.cloudinary.com/dipanc1/image/upload/v1645081130/portfolio2/Screenshot_282_plshuh.jpg",
             icon: "https://img.icons8.com/ios/50/000000/project-management.png"
         },
         {
             id: 2,
-            title: "Blog Website Using Pure HTML, CSS & JavaScript",
-            desc: "Resposive Blog Website Without Backend But Can Be Added.",
+            title: "React Google App",
+            desc: "Show search results from Google API, You can search for videos, images, videos and all. You can also save your search history.",
             img:
-            "https://res.cloudinary.com/dipanc1/image/upload/v1641959995/portfolio/img1_t8bzvh.png",
+            "https://res.cloudinary.com/dipanc1/image/upload/v1645081128/portfolio2/Screenshot_277_wq7oac.jpg",
             icon: "https://img.icons8.com/ios/50/000000/project-management.png"
         },
         {
             id: 3,
-            title: "Chat App Using BootStrap, Nodejs And SocketIO.",
-            desc: "Made It Using Nodejs In Server, JavaScript and Bootstrap In FrontEnd and Hosted It on Digital Ocean Using Apache Server",
+            title: "React News App",
+            desc: "Show top news from the world. Also many more categories to choose from. Fetching data from the GNews API.",
             img:
-            "https://res.cloudinary.com/dipanc1/image/upload/v1641960008/portfolio/img2_jdrfmm.png",
+            "https://res.cloudinary.com/dipanc1/image/upload/v1645081128/portfolio2/Screenshot_275_lylmdt.jpg",
             icon: "https://img.icons8.com/ios/50/000000/project-management.png"
         },
     ];
