@@ -31,7 +31,7 @@ export default function Topbar({ menuOpen, setMenuOpen }) {
                     </div>
                     <div className="itemContainer">
                         <FileCopy className="icon" />
-                        <span><a href="https://drive.google.com/file/d/1gRszM1Fd_T-25X7XHvD-vA7pweEqy9_g/view " target="_blank" rel="noreferrer noopener">Resume</a></span>
+                        <span><a href="https://drive.google.com/file/d/1PeTWaZ1lOqXshRXGvN0YGEV94kIwzG35/view?usp=sharing" target="_blank" rel="noreferrer noopener">Resume</a></span>
                     </div>
                     <div className="itemContainer1">
                         <Work className="icon1" />

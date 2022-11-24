@@ -12,7 +12,7 @@ export default function Intro() {
             showCursor: true,
             backDelay: 1500,
             backSpeed: 25,
-            strings: ['UI/UX', 'Reactjs', 'Nodejs', 'ASP.NET', 'MongoDB', 'MS SQL', 'Web APIs', 'Basically Web Development']
+            strings: ['UI/UX', 'Reactjs', 'Angular', 'Nodejs', 'ASP.NET', 'Springboot', 'MongoDB', 'SQL']
         })
 
     }, []);
