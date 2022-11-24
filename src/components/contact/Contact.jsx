@@ -5,9 +5,13 @@ import emailjs from '@emailjs/browser';
 import { ThemeContext } from "../../context";
 
 export default function Contact() {
+    const [done, setDone] = useState(false);
+    const [emailError, setEmailError] = useState('');
+    
     const formRef = useRef();
+    const theme = useContext(ThemeContext);
+    const darkMode = theme.state.darkMode;
 
-    const [emailError, setEmailError] = useState('')
     const validateEmail = (e) => {
         var email = e.target.value
 
@@ -18,7 +22,6 @@ export default function Contact() {
         }
     }
 
-    const [done, setDone] = useState(false);
     const handleSubmit = (e) => {
         e.preventDefault();
         emailjs
@@ -38,9 +41,7 @@ export default function Contact() {
                 }
             );
     };
-
-    const theme = useContext(ThemeContext);
-    const darkMode = theme.state.darkMode;
+    
 
     return (
         <div className="contact" id="contact" style={{ backgroundColor: darkMode ? '#15023a' : 'white', color: darkMode && 'white' }}>
@@ -57,7 +58,7 @@ export default function Contact() {
                         color: 'red',
                     }}>{emailError}</h3>
                     {emailError === 'Enter valid Email!' ? null
-                        : <button style={{backgroundColor: darkMode && '#59b256'}} type="submit">{done ? "Sent" : "Submit"}</button>}
+                        : <button disabled={!done} style={{backgroundColor: darkMode && '#59b256'}} type="submit">{done ? "Sent" : "Submit"}</button>}
                 </form>
             </div>
         </div>
